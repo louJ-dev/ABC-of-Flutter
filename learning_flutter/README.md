@@ -1,16 +1,3 @@
-# learning_flutter
+Tried making this login screen I saw on google / pinterest, can't remember
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[https://www.figma.com/design/pi7sDjr2Ek0KeXOM31Ve6B/Login---Signup-Screen--Community-?node-id=206-2&t=fqjEqKbgF5YX5ppo-0]
