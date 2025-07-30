@@ -62,15 +62,17 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             Positioned(
-              top: 366,
+              top: MediaQuery.of(context).size.height * 0.35,
               child: DefaultTabController(
                 length: 2,
+                animationDuration: Duration.zero,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 48.5),
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.5,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 43),
@@ -96,13 +98,13 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-
+              
                       SizedBox(height: 40,),
-
+              
                       Expanded(
                         child: TabBarView(
                           children: [
-
+              
                             // Login
                             SizedBox(
                               width: 200,
@@ -125,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ),
                                   ),
-
+              
                                   SizedBox(height: 11),
                                   
                                   Container(
@@ -144,9 +146,9 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ),
                                   ),
-
+              
                                   SizedBox(height: 34),
-
+              
                                   Container(
                                     width: 176,
                                     height: 33,
@@ -167,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ],
                               ),
                             ),
-
+              
                             // Register
                             SizedBox(
                               width: 200,
@@ -190,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ),
                                   ),
-
+              
                                   SizedBox(height: 11),
                                   
                                   Container(
@@ -209,7 +211,7 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ),
                                   ),
-
+              
                                   SizedBox(height: 11),
                                   
                                   Container(
@@ -227,9 +229,9 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ),
                                   ),
-
+              
                                   SizedBox(height: 34),
-
+              
                                   Container(
                                     width: 176,
                                     height: 33,
@@ -250,7 +252,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ],
                               ),
                             ),
-
+              
                           ],
                         ),
                       ),
