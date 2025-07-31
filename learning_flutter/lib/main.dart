@@ -15,6 +15,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
       theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            fixedSize: Size(176, 33),
+            backgroundColor: Color(0xFF004E89),
+            foregroundColor: Colors.white,
+            textStyle: TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ),
         textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme)
       ),
     );

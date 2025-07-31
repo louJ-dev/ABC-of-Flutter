@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_flutter/components/custom_text_field.dart';
 
 // Tried making this login screen I saw on google / pinterest, can't remember
 
@@ -17,17 +18,21 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    Size deviceSize = MediaQuery.of(context).size;
+    
     return Scaffold(
       backgroundColor: Color(0xFFE4F3FF),
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
+        maintainBottomViewPadding: true,
         child: Stack(
           children: [
             Positioned(
-              left: -17,
-              top: -43,
+              left: deviceSize.width * -0.03, // -17,
+              top: deviceSize.height * -0.1, // -43,
               child: Container(
-                width: 198,
-                height: 189,
+                width: deviceSize.width * 0.45, // 200
+                height: deviceSize.width * 0.45, // 189
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xff004E89),
@@ -41,12 +46,13 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            
             Positioned(
-              left: 97.5,
-              top: -79.26,
+              left: deviceSize.width * 0.35, // 97.5,
+              top: deviceSize.height * -0.2, // -79.26,
               child: Container(
-                width: 398.58,
-                height: 408.51,
+                width: deviceSize.width * 0.9, // 398.58
+                height: deviceSize.width * 0.9, // 408.51
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xFF1A659E),
@@ -57,6 +63,32 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.black.withValues(alpha: 0.25),
                     ),
                   ],
+                ),
+              ),
+            ),
+
+                        Positioned(
+              left: deviceSize.width * -0.09, // -45,
+              bottom: deviceSize.height * -0.09, // 692,
+              child: Container(
+                width: deviceSize.width * 0.43, // 179.25,
+                height: deviceSize.width * 0.43, // 189.95,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFF004E89),
+                ),
+              ),
+            ),
+
+            Positioned(
+              left: deviceSize.width * 0.32, // 115.35,
+              bottom: deviceSize.height * 0.12, // 680.14,
+              child: Container(
+                width: deviceSize.width * 0.15, // 52.17,
+                height: deviceSize.width * 0.15, // 52.17,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xff1A659E),
                 ),
               ),
             ),
@@ -84,12 +116,12 @@ class _LoginPageState extends State<LoginPage> {
                             indicatorWeight: 2,
                             labelStyle: TextStyle(
                               fontSize: 11,
-                              fontWeight: FontWeight.bold
+                              fontWeight: FontWeight.bold,
                             ),
                             unselectedLabelStyle: TextStyle(
                               color: Color(0xFF004EB8).withValues(alpha: 0.6),
                               fontWeight: FontWeight.w500,
-                              fontSize: 11
+                              fontSize: 11,
                             ),
                             tabs: [
                               Tab(text: "Login"),
@@ -98,161 +130,60 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-              
-                      SizedBox(height: 40,),
-              
+
+                      SizedBox(height: 40),
+
                       Expanded(
                         child: TabBarView(
                           children: [
-              
+
                             // Login
                             SizedBox(
                               width: 200,
                               height: 200,
                               child: Column(
                                 children: [
-                                  Container(
-                                    color: Colors.white,
-                                    padding: EdgeInsetsDirectional.symmetric(horizontal: 8),
-                                    child: TextField(
-                                      controller: _userControl,
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        icon: Icon(Icons.person_outline_rounded),
-                                        fillColor: Colors.white,
-                                        hintText: "Username",
-                                        hintStyle: TextStyle(
-                                          fontWeight: FontWeight.bold
-                                        )
-                                      ),
-                                    ),
-                                  ),
-              
+                                  CustomTextField(controller: _userControl, hintText: "Username", iconData: Icons.person_outline_sharp),
+
                                   SizedBox(height: 11),
-                                  
-                                  Container(
-                                    color: Colors.white,
-                                    padding: EdgeInsetsDirectional.symmetric(horizontal: 8),
-                                    child: TextField(
-                                      controller: _passControl,
-                                      obscureText: true,
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        icon: Icon(Icons.lock_open_rounded),
-                                        hintText: "Password",
-                                        hintStyle: TextStyle(
-                                          fontWeight: FontWeight.bold
-                                        )
-                                      ),
-                                    ),
-                                  ),
-              
+
+                                  CustomTextField(controller: _passControl, hintText: "Password", iconData: Icons.lock_open_outlined, obscure: true),
+
                                   SizedBox(height: 34),
-              
-                                  Container(
-                                    width: 176,
-                                    height: 33,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF004E89),
-                                      borderRadius: BorderRadius.circular(100)
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Login",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold
-                                      ),
-                                    )
-                                  )
+
+                                  ElevatedButton(
+                                    onPressed: () => {},
+                                    child: Text("Login"),
+                                  ),
                                 ],
                               ),
                             ),
-              
+
                             // Register
                             SizedBox(
                               width: 200,
                               height: 200,
                               child: Column(
                                 children: [
-                                  Container(
-                                    color: Colors.white,
-                                    padding: EdgeInsetsDirectional.symmetric(horizontal: 8),
-                                    child: TextField(
-                                      controller: _userControl,
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        icon: Icon(Icons.person_outline_rounded),
-                                        fillColor: Colors.white,
-                                        hintText: "Username",
-                                        hintStyle: TextStyle(
-                                          fontWeight: FontWeight.bold
-                                        )
-                                      ),
-                                    ),
-                                  ),
-              
+                                  CustomTextField(controller: _userControl, hintText: "Username", iconData: Icons.person_outline_sharp),
+
                                   SizedBox(height: 11),
-                                  
-                                  Container(
-                                    color: Colors.white,
-                                    padding: EdgeInsetsDirectional.symmetric(horizontal: 8),
-                                    child: TextField(
-                                      controller: _passControl,
-                                      obscureText: true,
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        icon: Icon(Icons.lock_open_rounded),
-                                        hintText: "Password",
-                                        hintStyle: TextStyle(
-                                          fontWeight: FontWeight.bold
-                                        )
-                                      ),
-                                    ),
-                                  ),
-              
+
+                                  CustomTextField(controller: _passControl, hintText: "Password", iconData: Icons.lock_open_outlined, obscure: true),
+
                                   SizedBox(height: 11),
-                                  
-                                  Container(
-                                    color: Colors.white,
-                                    padding: EdgeInsetsDirectional.symmetric(horizontal: 8),
-                                    child: TextField(
-                                      controller: _passControl,
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        icon: Icon(Icons.email_outlined),
-                                        hintText: "Email",
-                                        hintStyle: TextStyle(
-                                          fontWeight: FontWeight.bold
-                                        )
-                                      ),
-                                    ),
-                                  ),
-              
+
+                                  CustomTextField(controller: _userControl, hintText: "Email", iconData: Icons.person_outline_sharp),
+
                                   SizedBox(height: 34),
-              
-                                  Container(
-                                    width: 176,
-                                    height: 33,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF004E89),
-                                      borderRadius: BorderRadius.circular(100)
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Login",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold
-                                      ),
-                                    )
-                                  )
+
+                                  ElevatedButton(
+                                    onPressed: () => {},
+                                    child: Text("Sign Up"),
+                                  ),
                                 ],
                               ),
                             ),
-              
                           ],
                         ),
                       ),
@@ -261,35 +192,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-
-            Positioned(
-              left: -45,
-              top: 692,
-              child: Transform.rotate(
-                angle: 0.870,
-                child: Container(
-                  width: 179.25,
-                  height: 189.95,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFF004E89),
-                  ),
-                ),
-              ),
-            ),
-
-            Positioned(
-              left: 115.35,
-              top: 680.14,
-              child: Container(
-                width: 52.17,
-                height: 52.17,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color(0xff1A659E),
-                ),
-              ),
-            )
           ],
         ),
       ),
