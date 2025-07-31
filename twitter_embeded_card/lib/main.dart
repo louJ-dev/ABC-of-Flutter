@@ -49,6 +49,9 @@ class TwitterEmbedCard extends StatelessWidget {
     return const Column(
       children: [
         TweetProfile(),
+
+        SizedBox(height: 16),
+        
         TweetCaption(),
       ],
     );
