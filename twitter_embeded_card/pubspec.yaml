@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^6.2.1
   vector_graphics: ^1.1.11+1
 
 dev_dependencies:
@@ -45,3 +46,12 @@ flutter:
     - path: assets/icon_x.svg
       transformers:
         - package: vector_graphics_compiler
+  fonts:
+    - family: Helvetica
+      fonts:
+        - asset: assets/fonts/Helvetica.ttf
+          style: normal
+        - asset: assets/fonts/Helvetica-Bold.ttf
+          weight: 700
+
+  
