@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_embed_card/components/tweet_content.dart';
 import 'components/tweet_caption.dart';
 import 'components/tweet_profile.dart';
 
@@ -50,6 +51,10 @@ class TwitterEmbedCard extends StatelessWidget {
         SizedBox(height: 16),
 
         TweetCaption(),
+
+        SizedBox(height: 16),
+
+        TweetContent(),
       ],
     );
   }
