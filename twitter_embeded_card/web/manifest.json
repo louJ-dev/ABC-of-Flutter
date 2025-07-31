@@ -1,6 +1,6 @@
 {
-    "name": "twitter_embeded_card",
-    "short_name": "twitter_embeded_card",
+    "name": "twitter_embed_card",
+    "short_name": "twitter_embed_card",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

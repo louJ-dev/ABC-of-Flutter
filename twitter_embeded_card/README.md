@@ -1,16 +1,20 @@
-# twitter_embeded_card
+# Challenge: Twitter Embed Card
 
-A new Flutter project.
+This is the code for one of the challenges at [pro.codewithandrea.com](https://pro.codewithandrea.com/).
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## How to run the project
 
-A few resources to get you started if this is your first Flutter project:
+Open this in your favorite IDE, then run:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```zsh
+flutter pub get # to get all packages
+flutter create . # to generate all the target platforms
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project info
+
+- All the required assets are included in the `pubspec.yaml`
+- Helper `SvgAsset` and `SvgIcon` classes are provided (see `main.dart` how to use them)
+
+

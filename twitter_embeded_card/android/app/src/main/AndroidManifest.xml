@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="twitter_embeded_card"
+        android:label="twitter_embed_card"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
