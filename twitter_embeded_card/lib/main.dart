@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:twitter_embed_card/components/tweet_actions.dart';
 import 'package:twitter_embed_card/components/tweet_content.dart';
 import 'package:twitter_embed_card/components/tweet_time_date.dart';
+import 'package:twitter_embed_card/svg_asset.dart';
+import 'package:twitter_embed_card/vector_icon.dart';
 import 'components/tweet_caption.dart';
 import 'components/tweet_profile.dart';
 
@@ -48,7 +50,15 @@ class TwitterEmbedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        TweetProfile(),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TweetProfile(),
+
+            VectorIcon(asset: SvgAsset.x)
+          ],
+        ),
 
         SizedBox(height: 16),
 
